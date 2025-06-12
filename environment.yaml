@@ -1,0 +1,19 @@
+name: ndvi_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - gdal
+  - rasterio
+  - numpy
+  - matplotlib
+  - jupyterlab
+  - ipykernel
+  - geopandas
+  - scikit-image
+  - shapely
+  - pyproj
+  - pandas
+  - pip
+  - pip:
+      - planetary-computer

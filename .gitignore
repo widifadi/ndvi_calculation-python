@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.Python
+.env
+.venv/
+.envrc
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Planet Data
+*.tif
+*.xml
+*.json
+*.jp2
+*.tar.gz
+
+# Temporary files
+*.log
+*.aux.xml
+*.tmp
+.DS_Store
+
+# GDAL wheel
+.whl
