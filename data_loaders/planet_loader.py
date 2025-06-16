@@ -16,8 +16,8 @@ class PlanetScopeLoader:
         TODO: Acquire PlanetScope images for the given time range and area
 
         Args:
-            start_date (string): image acquisition start date
-            end_date (string): image acquisition end date
-            aoi (string): area of interest in .geojson file
+            start_date (str): image acquisition start date
+            end_date (str): image acquisition end date
+            aoi (str): area of interest in .geojson file
         """
         raise NotImplementedError("PlanetScope data acquisition is not yet imlemented.")

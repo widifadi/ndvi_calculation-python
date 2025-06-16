@@ -43,7 +43,12 @@ def main():
     } # Change to .geojson file
 
     # Initialize the pipeline
-    pipeline = NDVIPipeline()
+    pipeline = NDVIPipeline(
+        source="landsat8",
+        start_date=start_date,
+        end_date=end_date,
+        region=aoi
+    )
 
     images = landsat_loader.get_images(start_date, end_date, aoi)
     results = pipeline.process(images)

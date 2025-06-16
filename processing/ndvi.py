@@ -2,18 +2,24 @@
 NDVI calculation functions.
 """
 
-def calculate_ndvi(image):
+def calculate_ndvi(nir_band, red_band, source='landsat8'):
     """
-    Calculate NDVI from the given image.
+    Calculate NDVI from NIR and Red bands for given satellite source.
     
     Args:
-        image: input satellite image
-    
+        nir_band (np.ndarray): NIR band array.
+        red_band (np.ndarray): Red band array.
+        source (str): Data source.
+
     Returns:
-        NDVI image
+        np.ndarray: NDVI image.
     """
-    # Assuming image has bands 'NIR' and 'RED'
-    # Example for GEE:
-    # ndvi = image.normalizedDifference(['NIR', 'RED']).rename('NDVI')
-    
-    raise NotImplementedError("NDVI calculation function not implemented yet.")
+    if source == 'landsat8':
+        # Landsat 8: NIR = Band 5, Red = Band 4
+        # ndvi = (nir_band - red_band) / (nir_band + red_band + 1e-10)
+        ndvi = nir_band.substract(red_band).divide(nir_band.add(red_band).add(1e-10))
+        return ndvi
+    elif source == 'planetscope':
+        raise NotImplementedError("NDVI calculation for PlanetScope not implemented.")
+    else:
+        raise ValueError(f"Unknown source: {source}")
